@@ -16,7 +16,10 @@ pipenv shell
 ```
 
 ## Run
-`uvicorn main:app --reload`
+```
+pipenv shell
+uvicorn main:app --reload
+```
 
 ## Tests
 `python -m tests`
