@@ -12,7 +12,6 @@ PulsuPro Test Calculator API
 git clone https://github.com/archieruin/PulsuProTest.git
 cd PulsuProTest
 pipenv install
-pipenv shell
 ```
 
 ## Run
