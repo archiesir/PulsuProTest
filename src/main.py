@@ -38,7 +38,3 @@ def division(first: Union[int, float], second: Union[int, float]):
     result = first / second
     save_operation("/", first, second, result)
     return result
-
-
-# Run command:
-# uvicorn main:app --reload
