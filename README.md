@@ -17,7 +17,7 @@ pipenv install
 ## Run
 ```
 pipenv shell
-uvicorn main:app --reload
+uvicorn src:app --reload
 ```
 
 ## Tests
