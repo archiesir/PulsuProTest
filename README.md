@@ -21,4 +21,7 @@ uvicorn src:app --reload
 ```
 
 ## Tests
-`python -m tests`
+```
+pipenv shell
+python -m tests
+```
