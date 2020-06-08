@@ -3,11 +3,11 @@ from typing import Union
 
 from pymongo import MongoClient
 
-client = MongoClient('mongodb://localhost:27017/')
+from src import config
 
-db = client.pulsu_pro_test
-
-history_collection = db.history
+client = MongoClient(config.MONGODB_URL)
+db = client[config.MONGODB_NAME]
+history_collection = db[config.MONGODB_COLLECTION]
 
 
 def save_operation(operator: str,

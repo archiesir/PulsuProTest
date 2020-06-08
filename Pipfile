@@ -10,6 +10,8 @@ fastapi = "*"
 uvicorn = "*"
 requests = "*"
 pymongo = "*"
+envparse = "*"
+pathlib = "*"
 
 [requires]
 python_version = "3.8"
