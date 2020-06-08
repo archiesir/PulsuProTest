@@ -1,5 +1,3 @@
-from typing import Union
-
 from fastapi import FastAPI
 
 from src.models import save_operation
@@ -13,28 +11,51 @@ def read_root():
 
 
 @app.get("/add")
-def add(first: Union[int, float], second: Union[int, float]):
-    result = first + second
+def add(first, second):
+    try:
+        result = int(first) + int(second)
+
+    except ValueError:
+        return {'error': 'Invalid argument'}
+
     save_operation("+", first, second, result)
     return result
 
 
 @app.get("/sub")
-def subtract(first: Union[int, float], second: Union[int, float]):
-    result = first - second
+def subtract(first, second):
+    try:
+        result = int(first) - int(second)
+
+    except ValueError:
+        return {'error': 'Invalid argument'}
+
     save_operation("-", first, second, result)
     return result
 
 
 @app.get("/multi")
-def multiply(first: Union[int, float], second: Union[int, float]):
-    result = first * second
+def multiply(first, second):
+    try:
+        result = int(first) * int(second)
+
+    except ValueError:
+        return {'error': 'Invalid argument'}
+
     save_operation("*", first, second, result)
     return result
 
 
 @app.get("/div")
-def division(first: Union[int, float], second: Union[int, float]):
-    result = first / second
+def division(first, second):
+    try:
+        result = int(first) / int(second)
+
+    except ValueError:
+        return {'error': 'Invalid argument'}
+
+    except ZeroDivisionError:
+        return {'error': 'Division by zero'}
+
     save_operation("/", first, second, result)
     return result
