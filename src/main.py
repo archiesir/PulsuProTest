@@ -5,12 +5,12 @@ from src.models import save_operation
 app = FastAPI()
 
 
-@app.get("/")
+@app.get('/')
 def read_root():
-    return {"message": "Calculator"}
+    return {'message': 'Calculator'}
 
 
-@app.get("/add")
+@app.get('/add')
 def add(first, second):
     try:
         result = int(first) + int(second)
@@ -18,11 +18,11 @@ def add(first, second):
     except ValueError:
         return {'error': 'Invalid argument'}
 
-    save_operation("+", first, second, result)
-    return result
+    operation = save_operation('+', first, second, result)
+    return {'operation': operation}
 
 
-@app.get("/sub")
+@app.get('/sub')
 def subtract(first, second):
     try:
         result = int(first) - int(second)
@@ -30,11 +30,11 @@ def subtract(first, second):
     except ValueError:
         return {'error': 'Invalid argument'}
 
-    save_operation("-", first, second, result)
-    return result
+    operation = save_operation('-', first, second, result)
+    return {'operation': operation}
 
 
-@app.get("/multi")
+@app.get('/multi')
 def multiply(first, second):
     try:
         result = int(first) * int(second)
@@ -42,11 +42,11 @@ def multiply(first, second):
     except ValueError:
         return {'error': 'Invalid argument'}
 
-    save_operation("*", first, second, result)
-    return result
+    operation = save_operation('*', first, second, result)
+    return {'operation': operation}
 
 
-@app.get("/div")
+@app.get('/div')
 def division(first, second):
     try:
         result = int(first) / int(second)
@@ -57,5 +57,5 @@ def division(first, second):
     except ZeroDivisionError:
         return {'error': 'Division by zero'}
 
-    save_operation("/", first, second, result)
-    return result
+    operation = save_operation('/', first, second, result)
+    return {'operation': operation}
