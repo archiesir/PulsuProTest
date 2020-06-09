@@ -6,6 +6,8 @@ PulsuPro Test Calculator API
 - uvicorn
 - requests
 - pymongo
+- envparse
+- pathlib
 
 ## Install
 ```
