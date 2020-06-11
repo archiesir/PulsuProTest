@@ -16,6 +16,9 @@ cd PulsuProTest
 pipenv install
 ```
 
+##Setup environment
+Copy .env.dist to .env file and change values in this file
+
 ## Run
 ```
 pipenv shell
